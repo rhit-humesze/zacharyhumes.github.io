@@ -1,0 +1,37 @@
+body#index img{ 
+    height: 15em;
+    /* padding-left: 1.5em; */
+}
+
+body#index{
+    padding-left: 1.5em;
+}
+
+body {
+    display: grid;
+    grid-template-areas: "head head"
+                         "nav main"
+                         "foot foot";
+}
+body > header {
+    grid-area: "head";
+}
+
+body > nav {
+    grid-area: "nav";
+}
+
+body > main {
+    grid-area: "main";
+}
+
+body > footer {
+    grid-area: "footer";
+}
+
+p {
+    max-width: 50em;
+    line-height: 1.2;
+    font-size: 16px;
+}
+
