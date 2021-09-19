@@ -1,32 +1,93 @@
+:root {
+    --vertical-space: 2rem;
+    --horizontal-sapce: 3rem;
+}
+
 body#index img{ 
     height: 15em;
     /* padding-left: 1.5em; */
 }
 
+/* FONTS: quattrocento for headers, volkhov for bodies */
+@import url('https://fonts.googleapis.com/css2?family=Quattrocento&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Volkhov&display=swap');
+
 body#index{
-    padding-left: 1.5em;
+    /* padding-left: 1.5em; */
+}
+
+body > {
+    /* padding-left: 4em;
+    margin-left: 529em; this isnt working */
+}
+
+/* TODO: ask why this doesn't work */
+h1, h2, h3 {
+    line-height: 1.2;
+    /* font-family: 'Quattrocento', serif; */
+    font-family: 'Volkhov', serif;
 }
 
 body {
     display: grid;
     grid-template-areas: "head head"
                          "nav main"
-                         "foot foot";
+                         "footer footer";
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 1fr 3fr;
+}
+
+@media screen and (min-width: 25em){
+    body {
+        grid-template-areas: "head head"
+                            "nav main"
+                            "footer footer";
+    };
+    body#portfolio ul#portfolioItems li {
+        flex-basis: 48%;
+        padding-right: 2%;
+    };
 }
 body > header {
-    grid-area: "head";
+    grid-area: head;
+    padding-left: var(--horizontal-sapce);
+    padding-right: var(--horizontal-sapce);
+    /* background-color: red */
 }
 
 body > nav {
-    grid-area: "nav";
+    grid-area: nav;
+    /* background-color: blue; */
+    padding-left: var(--horizontal-sapce);
+    padding-right: var(--horizontal-sapce);
+}
+
+body > nav ul {
+    list-style-type: none;
+    padding: 0;
 }
 
 body > main {
-    grid-area: "main";
+    grid-area: main;
+    padding-left: var(--horizontal-sapce);
+    padding-right: var(--horizontal-sapce);
+    /* background-color: green */
 }
 
 body > footer {
-    grid-area: "footer";
+    grid-area: footer;
+    padding-left: var(--horizontal-sapce);
+    padding-right: var(--horizontal-sapce);
+    /* background-color: yellow */
+}
+
+header h1, footer h1 {
+    margin: 0
+}
+
+header, footer {
+    padding-top: var(--vertical-space);
+    padding: 1.3rem
 }
 
 p {
@@ -35,3 +96,19 @@ p {
     font-size: 16px;
 }
 
+body#portfolio ul#portfolioItems {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    list-style-type: none;
+    padding: 0;
+}
+
+body#portfolio ul#portfolioItems li {
+    flex-basis: 48%;
+    padding-right: 2%;
+}
+
+body#portfolio ul#portfolioItems li img {
+    max-width: 100%;
+}
