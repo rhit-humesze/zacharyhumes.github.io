@@ -4,8 +4,13 @@
 }
 
 body#index img{ 
+    float: left;
     height: 15em;
-    /* padding-left: 1.5em; */
+    display: inline;
+    margin-right: 18px;
+    margin-bottom: 18px;
+    border: 1px solid black;
+    box-shadow: 7px 7px 7px 0px rgb(0 0 0 / 74%);
 }
 
 /* FONTS: quattrocento for headers, volkhov for bodies */
@@ -24,24 +29,26 @@ body > {
 /* TODO: ask why this doesn't work */
 h1, h2, h3 {
     line-height: 1.2;
-    /* font-family: 'Quattrocento', serif; */
-    font-family: 'Volkhov', serif;
+    font-family: 'Quattrocento', serif;
+    /* font-family: 'Volkhov', serif; */
 }
 
 body {
     display: grid;
     grid-template-areas: "head head"
-                         "nav main"
+                         "nav nav"
+                         "main main"
                          "footer footer";
     grid-template-rows: auto 1fr auto;
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 2fr 2fr;
 }
 
 @media screen and (min-width: 25em){
     body {
-        grid-template-areas: "head head"
-                            "nav main"
-                            "footer footer";
+        grid-template-areas: "head nav"
+                         "main  main"
+                         "footer footer";
+        grid-template-rows: auto 1fr auto;
     };
     body#portfolio ul#portfolioItems li {
         flex-basis: 48%;
@@ -55,8 +62,13 @@ body > header {
     /* background-color: red */
 }
 
+/* body > header > h1 {
+    display: block;
+} */
+
 body > nav {
     grid-area: nav;
+    padding-top: var(--vertical-space);
     /* background-color: blue; */
     padding-left: var(--horizontal-sapce);
     padding-right: var(--horizontal-sapce);
@@ -65,6 +77,11 @@ body > nav {
 body > nav ul {
     list-style-type: none;
     padding: 0;
+}
+
+body > nav ul li {
+    display: inline-block;
+    padding-right: 1em;
 }
 
 body > main {
@@ -87,13 +104,17 @@ header h1, footer h1 {
 
 header, footer {
     padding-top: var(--vertical-space);
-    padding: 1.3rem
+    margin-bottom: 0;
+}
+
+footer {
+    font-size: 18px;
 }
 
 p {
     max-width: 50em;
     line-height: 1.2;
-    font-size: 16px;
+    font-size: 20px;
 }
 
 body#portfolio ul#portfolioItems {
