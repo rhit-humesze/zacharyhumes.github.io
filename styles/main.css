@@ -1,6 +1,18 @@
 :root {
     --vertical-space: 2rem;
     --horizontal-sapce: 3rem;
+    
+}
+
+.day-time {
+    background-image: linear-gradient(270deg, rgb(68, 144, 190),rgb(251, 254, 241));
+}
+
+.night-time {
+
+}
+img{
+    box-shadow: 7px 7px 7px 0px rgb(0 0 0 / 74%);
 }
 
 body#index img{ 
@@ -10,18 +22,17 @@ body#index img{
     margin-right: 18px;
     margin-bottom: 18px;
     border: 1px solid black;
-    box-shadow: 7px 7px 7px 0px rgb(0 0 0 / 74%);
 }
 
 /* FONTS: quattrocento for headers, volkhov for bodies */
-@import url('https://fonts.googleapis.com/css2?family=Quattrocento&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Volkhov&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Quattrocento&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Volkhov&display=swap'); */
 
 body#index{
     /* padding-left: 1.5em; */
 }
 
-body > {
+body > * {
     /* padding-left: 4em;
     margin-left: 529em; this isnt working */
 }
@@ -31,7 +42,15 @@ h1, h2, h3 {
     line-height: 1.2;
     font-family: 'Quattrocento', serif;
     /* font-family: 'Volkhov', serif; */
+    /* color: #544E5C */
+    color: #ff7b00;
+    /* border: 1px solid #595f45; */
 }
+
+h2 {
+    color: #ff4800;
+}
+
 
 body {
     display: grid;
@@ -41,6 +60,8 @@ body {
                          "footer footer";
     grid-template-rows: auto 1fr auto;
     grid-template-columns: 2fr 2fr;
+    font-family: 'Volkhov', serif;
+    
 }
 
 @media screen and (min-width: 25em){
@@ -84,6 +105,13 @@ body > nav ul li {
     padding-right: 1em;
 }
 
+body > main > *:first-child:before {
+    content: "";
+    border-top: 2px solid #ff7b00;
+    display: block;
+    padding-top: var(--vertical-space);
+}
+
 body > main {
     grid-area: main;
     padding-left: var(--horizontal-sapce);
@@ -95,6 +123,9 @@ body > footer {
     grid-area: footer;
     padding-left: var(--horizontal-sapce);
     padding-right: var(--horizontal-sapce);
+    padding-top: 0;
+    margin-bottom: var(--horizontal-space);
+    text-shadow: 2px 2px #8cb2bd84
     /* background-color: yellow */
 }
 
@@ -108,13 +139,15 @@ header, footer {
 }
 
 footer {
-    font-size: 18px;
+    font-size: 16px;
+    font-family: 'Volkhov', serif;
 }
 
 p {
     max-width: 50em;
-    line-height: 1.2;
-    font-size: 20px;
+    line-height: 1.4;
+    font-size: 16px;
+    text-shadow: 2px 2px #8cb2bd84;
 }
 
 body#portfolio ul#portfolioItems {
@@ -125,11 +158,28 @@ body#portfolio ul#portfolioItems {
     padding: 0;
 }
 
-body#portfolio ul#portfolioItems li {
-    flex-basis: 48%;
-    padding-right: 2%;
-}
-
-body#portfolio ul#portfolioItems li img {
+body#portfolio ul#portfolioItems {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  @media screen and (min-width: 25em) {
+    body#portfolio ul#portfolioItems li {
+      flex-basis: 48%;
+      padding-right: 2%;
+    }
+  }
+  
+  body#portfolio ul#portfolioItems li img {
     max-width: 100%;
+    margin-left: -0.66em;
+  }
+
+h1 {
+    text-shadow: 2px 2px #8cb5b384;
+    font-family: 'Quattrocento', serif; 
+
 }
