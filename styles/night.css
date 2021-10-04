@@ -5,8 +5,8 @@
 }
 
 button#toggle-time {
-    color: white;
-    background-color: black;
+    color: yellow;
+    background-color: rgb(114, 184, 220);
     border-radius: 13px;
     -webkit-border-radius: 13px;
     -moz-border-radius: 13px;
@@ -15,12 +15,12 @@ button#toggle-time {
 }
 
 button#toggle-time:hover{
-    color: white;
-    background-color: rgb(75, 75, 99);
+    color: red;
+    background-color: rgb(55, 8, 86);
 }
 
 a:hover{
-    color: red;
+    color: green;
 }
 
 img{
@@ -33,7 +33,7 @@ body#index img{
     display: inline;
     margin-right: 18px;
     margin-bottom: 18px;
-    border: 1px solid black;
+    border: 1px solid white;
 }
 
 /* FONTS: quattrocento for headers, volkhov for bodies */
@@ -55,17 +55,17 @@ h1, h2, h3 {
     font-family: 'Quattrocento', serif;
     /* font-family: 'Volkhov', serif; */
     /* color: #544E5C */
-    color: #ff9900;
+    color: #00f2ff;
     /* border: 1px solid #595f45; */
     text-shadow: 2px 2px #8cb5b384;
 }
 
 h2 {
-    color: #ff7300;
+    color: #00b3ff;
 }
 
 h3 {
-    color: #ff0000;
+    color: #0080ff;
 }
 
 body {
@@ -77,12 +77,14 @@ body {
     grid-template-rows: auto 1fr auto;
     grid-template-columns: 2fr 2fr;
     /* font-family: 'Volkhov', serif; */
-    background-image: linear-gradient(270deg, rgb(68, 144, 190),rgb(251, 254, 241));
+    background-image: linear-gradient(270deg, rgb(24, 7, 61),rgb(40, 7, 42));
+    
 }
 
 p, li, div{
     font-family: 'Volkhov', serif;
     font-size: 16px;
+    color: white;
 }
 
 @media screen and (min-width: 25em){
@@ -129,7 +131,7 @@ body > nav ul li {
 
 body > main > *:first-child:before {
     content: "";
-    border-top: 2px solid #ff7b00;
+    border-top: 2px solid #00f2ff;
     display: block;
     padding-top: var(--vertical-space);
 }
